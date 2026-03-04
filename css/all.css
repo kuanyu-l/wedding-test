@@ -60,7 +60,7 @@ $text-color: #8d957e;
 }
 
 #wedding {
-  background-color: $background-color;
+  background-color: #fcf2ed;
   img {
     width: 100%;
     display: block;
