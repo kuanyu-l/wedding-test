@@ -1,0 +1,173 @@
+@import url(/scss/bootstrap-reboot.scss);
+@import url(/scss/bootstrap-grid.scss);
+
+/** 字型 **/
+@font-face {
+  font-family: "Saudagar";
+  src: url("/fonts/Saudagar.ttf") format("ttf");
+}
+
+.italiana-regular {
+  font-family: "Saudagar", "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+// <weight>: Use a value from 200 to 900
+// <uniquifier>: Use a unique and descriptive class name
+.chiron-sung-hk {
+  font-family: "Chiron Sung HK", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.monsieur-la-doulaise-regular {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.times-new-roman {
+  font-family: "Times New Roman", Times, serif;
+}
+
+/** Color **/
+// 定義變量
+$primary-color: #974315;
+$secondary-color: #778899;
+$background-color: #fcf2ed;
+$text-color: #8d957e;
+
+#hero, .name, .date{ color: $primary-color;}
+.rol, .b, .c{ color: $secondary-color;}
+.rol, .b, .c{ color: $text-color;}
+
+/*排版*/
+.pt-6{padding-top: 4rem;}
+.pt-7{padding-top: 6rem;}
+.pt-8{padding-top: 9rem;}
+.pb-6{padding-bottom: 4rem;}
+.pb-7{padding-bottom: 6rem;}
+.pb-8{padding-bottom: 8rem;}
+
+/** Section **/
+#hero {
+  img {
+    width: 100%;
+    display: block;
+    border-radius: 60vw 60vw 0 0;
+    z-index: -100;
+  }
+}
+
+#wedding {
+  background-color: $background-color;
+  img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.gallery{
+  .row{
+    position: relative;
+  }  
+  img{
+    width: 100%;
+  }
+  .sticky{
+    display: block;
+    position: absolute;
+    bottom:-10%;
+    left: 50%;
+  }
+}
+
+.title {
+  --min-size: 128;
+  --max-size: 206;
+  --font-size: calc(
+    (var(--min-size) * 1px) + 
+    (var(--max-size) - var(--min-size)) * 
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(112px, 11vw, 200px);
+  position: absolute;
+  top: 10vw;
+  max-width: fit-content;
+  span {
+    font-size: 0.5em;
+  }
+}
+@media (min-width: 768px) {
+  .title{
+    position:static;}
+}
+
+
+.subtitle {
+  font-size: 2.5rem;
+  text-align: right;
+}
+
+.b{
+  font-size: 0.875rem;}
+.c {
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+}
+
+#day{
+  .row{
+    position: relative;
+    align-items: end;
+  }
+}
+.month{
+  --min-size: 96;
+  --max-size: 128;
+  --font-size: calc(
+    (var(--min-size) * 1px) + 
+    (var(--max-size) - var(--min-size)) * 
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(78px, 11vw, 120px);
+  text-align: right;
+  display: flex;
+  align-items: flex-end; /* 子元素靠下對齊 */
+  height: 100%; /* 需設定高度 */
+  &::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.9px #974315 solid;
+    transform: rotateZ(45deg);
+  }
+}
+.week{
+  --min-size: 20;
+  --max-size: 32;
+  --font-size: calc(
+    (var(--min-size) * 1px) + 
+    (var(--max-size) - var(--min-size)) * 
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(20px, 9vw, 32px);
+  text-align: center;
+}
+.slash{
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.9px #974315 solid;
+  transform: rotateZ(135deg);
+  position: relative;
+  bottom: 0%;
+}

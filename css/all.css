@@ -4,17 +4,10 @@
 /** 字型 **/
 @font-face {
   font-family: "Saudagar";
-  src: url("/fonts/Saudagar.woff2") format("woff2");
+  src: url("/fonts/Saudagar.ttf") format("ttf");
 }
 .italiana-regular {
-  font-family: "Italiana", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.saudagar {
-  font-family: "Saudagar";
-  font-optical-sizing: auto;
+  font-family: "Saudagar", "Italiana", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -22,7 +15,7 @@
 .chiron-sung-hk {
   font-family: "Chiron Sung HK", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -37,7 +30,7 @@
 }
 
 /** Color **/
-#hero, .name {
+#hero, .name, .date {
   color: #974315;
 }
 
@@ -70,6 +63,10 @@
   padding-bottom: 6rem;
 }
 
+.pb-8 {
+  padding-bottom: 8rem;
+}
+
 /** Section **/
 #hero img {
   width: 100%;
@@ -85,6 +82,19 @@
   width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+.gallery .row {
+  position: relative;
+}
+.gallery img {
+  width: 100%;
+}
+.gallery .sticky {
+  display: block;
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
 }
 
 .title {
@@ -123,4 +133,56 @@
 .c {
   font-size: 0.625rem;
   line-height: 1.125rem;
+}
+
+#day .row {
+  position: relative;
+  align-items: end;
+}
+
+.month {
+  --min-size: 96;
+  --max-size: 128;
+  --font-size: calc(
+    (var(--min-size) * 1px) +
+    (var(--max-size) - var(--min-size)) *
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(78px, 11vw, 120px);
+  text-align: right;
+  display: flex;
+  align-items: flex-end; /* 子元素靠下對齊 */
+  height: 100%; /* 需設定高度 */
+}
+.month::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.9px #974315 solid;
+  transform: rotateZ(45deg);
+}
+
+.week {
+  --min-size: 20;
+  --max-size: 32;
+  --font-size: calc(
+    (var(--min-size) * 1px) +
+    (var(--max-size) - var(--min-size)) *
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+  line-height: clamp(20px, 9vw, 32px);
+  text-align: center;
+}
+
+.slash {
+  width: 80%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.9px #974315 solid;
+  transform: rotateZ(135deg);
+  position: relative;
+  bottom: 0%;
 }/*# sourceMappingURL=all.css.map */
