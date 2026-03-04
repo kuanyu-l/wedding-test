@@ -1,10 +1,11 @@
 @charset "UTF-8";
-@import url(/scss/bootstrap-reboot.scss);
-@import url(/scss/bootstrap-grid.scss);
+@import url(scss/bootstrap-reboot.scss);
+@import url(scss/bootstrap-grid.scss);
 /** 字型 **/
 @font-face {
   font-family: "Saudagar";
-  src: url("/fonts/Saudagar.ttf") format("ttf");
+  src: url("fonts/Saudagar.woff2") format("woff2");
+  src: url("fonts/Saudagar.ttf") format("ttf");
 }
 .saudagar {
   font-family: "Saudagar";
