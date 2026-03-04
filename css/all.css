@@ -4,7 +4,7 @@
 /** 字型 **/
 @font-face {
   font-family: "Saudagar";
-  src: url("/fonts/Saudagar.woff2") format("woff2");
+  src: url("fonts/Saudagar.woff2") format("woff2");
 }
 
 .saudagar {
